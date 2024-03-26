@@ -5,14 +5,19 @@ array.
 
 Solve this using Array's `map()` method.
 
-Examples: 
+Examples:
 
 console.log(tripler([2, 7, 4])); // [ 6, 21, 12 ]
 console.log(tripler([-5, 10, 0, 11])); // [ -15, 30, 0, 33 ]
 */
 
 let tripler = function(nums) {
-    // Your code here
+    // use map method to create an array
+    // each element is three times the corresponding element
+    return nums.map(function(num) {
+      // multiply each element of original array by 3
+      return num * 3;
+    });
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
