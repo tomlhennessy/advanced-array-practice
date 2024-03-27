@@ -14,7 +14,11 @@ console.log(longWords(['couscous', 'soup', 'ceviche', 'solyanka' ,'taco'])); // 
 */
 
 let longWords = function(words) {
-    // Your code here
+    // use array's filter method to create new array with only words that meet the condition
+    return words.filter(function(word) {
+      // return true for words with length greater than 5 characters
+      return word.length > 5;
+    });
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
@@ -23,4 +27,4 @@ try {
   module.exports = longWords;
 } catch (e) {
   module.exports = null;
-}
+}
