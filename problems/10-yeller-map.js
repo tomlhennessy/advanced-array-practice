@@ -13,7 +13,9 @@ console.log(yeller(['kiwi', 'orange', 'mango'])); // [ 'KIWI!', 'ORANGE!', 'MANG
 */
 
 let yeller = function(words) {
-  // Your code here
+  // use map() to iterate over each word in the words array
+  return words.map(word => word.toUpperCase() + '!');
+  // convert each word to uppercase and add an exclamation mark
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
@@ -22,4 +24,4 @@ try {
   module.exports = yeller;
 } catch (e) {
   module.exports = null;
-}
+}

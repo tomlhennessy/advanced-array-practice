@@ -15,7 +15,11 @@ console.log(maxWithReduce([-2, -3, -7, 3])); // 3
 */
 
 let maxWithReduce = function(nums) {
-    // Your code here
+    // use reduce() to find the maximum number in the nums array
+    return nums.reduce((max, num) => num > max ? num : max, nums[0]);
+    // compare each number (num) with the current maximum (max)
+    // return the larger of the two numbers
+    // start with first element of array as initial max value
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

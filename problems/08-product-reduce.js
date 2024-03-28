@@ -16,7 +16,10 @@ console.log(productWithReduce([4, 3])); // 12
 */
 
 let productWithReduce = function(nums) {
-    // Your code here
+    // use reduce() to calculate the product of all numbers in nums
+    return nums.reduce((product, num) => product * num, 1);
+    // multiply each number (num) with the accumulated product (product)
+    // start with an initial value of 1 to handle empty arrays
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
@@ -25,4 +28,4 @@ try {
   module.exports = productWithReduce;
 } catch (e) {
   module.exports = null;
-}
+}

@@ -13,7 +13,10 @@ console.log(sumWithReduce([])); // 0
 */
 
 let sumWithReduce = function(nums) {
-  // Your code here
+  // use the reduce method on the nums array
+  return nums.reduce((total, num) => total + num, 0);
+  // accumulate the sum by adding each number (num) to the total
+  // start with an initial value of 0 to handle empty arrays
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
