@@ -15,7 +15,17 @@ console.log(shortestWord('do what you enjoy'));         // 'do'
 */
 
 let shortestWord = function(sentence) {
-  // Your code here
+  // split the sentence into an array of words
+  const words = sentence.split(' ');
+
+  // use the reduce method to find the shortest word
+  return words.reduce((shortest, current) => {
+    // if current word is shorter, update shortest word
+    if (current.length < shortest.length || (current.length === shortest.length && words.indexOf(current) > words.indexOf(shortest))) {
+      shortest = current;
+    }
+    return shortest;
+  })
 };
 
 // Your code here
@@ -26,4 +36,4 @@ try {
   module.exports = shortestWord;
 } catch (e) {
   module.exports = null;
-}
+}

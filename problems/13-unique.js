@@ -15,7 +15,11 @@ console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 */
 
 let unique = function(array) {
-    // Your code here
+    // use filter() method to create new array containing only elements that pass condition
+    return array.filter((value, index, self) => {
+        // check if index of current element is same as index of its first occurance in array
+        return self.indexOf(value) === index;
+    });
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
@@ -24,4 +28,4 @@ try {
     module.exports = unique;
 } catch (e) {
     module.exports = null;
-}
+}
