@@ -27,15 +27,44 @@ console.log(repeatingTranslate("pasta is my favorite dish"));   // "pastapasta i
 console.log(repeatingTranslate("her family flew to France"));   // "herer familyily flewew to FranceFrance"
 
 */
+// helper function if character is vowel
+let isVowel = function(char) {
+    return ['a', 'e', 'i', 'o', 'u'].includes(char.toLowerCase());
+}
 
+// helper function to find index of last vowel in a word
+let findLastVowelIndex = function(word) {
+    for  (let i = word.length - 1; i >= 0; i--) {
+        if (isVowel(word[i])) {
+            return i;
+        }
+    }
+    return -1; // if no vowel found
+}
+
+// helper function to repeat characters after last vowel in a word
+let repeatAfterVowel = function(word, index) {
+    const suffix = word.substring(index);
+    return word + suffix;
+}
+
+
+// main function to translate sentence
 let repeatingTranslate = function(sentence) {
-    // Your code here
+    return sentence.split(' ').map(word => {
+        if (word.length < 3) {
+            return word; // short words remain unchanged
+        } else {
+            const lastVowelIndex = findLastVowelIndex(word);
+            if (lastVowelIndex === -1 || isVowel(word[word.length - 1])) {
+                return word + word; // if ends with a vowel, repeat the word
+            } else {
+                return repeatAfterVowel(word, lastVowelIndex); // repeat characters after last vowel
+            }
+        }
+    }).join(' ');
 };
 
-
-let translateWord = function(word) {
-    // Your code here
-};
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
@@ -43,4 +72,4 @@ try {
     module.exports = repeatingTranslate;
 } catch (e) {
     module.exports = null;
-}
+}
